@@ -1,0 +1,13 @@
+{
+  "name": "calculator-devops",
+  "version": "1.0.0",
+  "description": "Calculator app with a serverless API, CI, and Vercel deployment",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "start": "npx vercel dev"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

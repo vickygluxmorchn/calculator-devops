@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevOps Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="calculator">
+    <h1>Calculator</h1>
+
+    <div class="display">
+      <div id="expression" class="expression">&nbsp;</div>
+      <div id="output" class="output">0</div>
+    </div>
+
+    <div id="error" class="error" role="alert"></div>
+
+    <div class="keys">
+      <button class="key function" data-action="clear">C</button>
+      <button class="key function" data-action="backspace">&larr;</button>
+      <button class="key function" data-action="negate">&plusmn;</button>
+      <button class="key operator" data-operation="divide">&divide;</button>
+
+      <button class="key" data-digit="7">7</button>
+      <button class="key" data-digit="8">8</button>
+      <button class="key" data-digit="9">9</button>
+      <button class="key operator" data-operation="multiply">&times;</button>
+
+      <button class="key" data-digit="4">4</button>
+      <button class="key" data-digit="5">5</button>
+      <button class="key" data-digit="6">6</button>
+      <button class="key operator" data-operation="subtract">&minus;</button>
+
+      <button class="key" data-digit="1">1</button>
+      <button class="key" data-digit="2">2</button>
+      <button class="key" data-digit="3">3</button>
+      <button class="key operator" data-operation="add">+</button>
+
+      <button class="key zero" data-digit="0">0</button>
+      <button class="key" data-action="decimal">.</button>
+      <button class="key equals" data-action="equals">=</button>
+    </div>
+
+    <footer class="status">
+      API status: <span id="api-status">checking...</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+:root {
+  --bg: #0f172a;
+  --panel: #1e293b;
+  --key: #334155;
+  --key-hover: #475569;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --operator: #f59e0b;
+  --danger: #f87171;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  padding: 16px;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 340px;
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+h1 {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.display {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 14px 16px;
+  text-align: right;
+  min-height: 90px;
+  overflow: hidden;
+}
+
+.expression {
+  color: var(--muted);
+  font-size: 0.95rem;
+  min-height: 1.3em;
+}
+
+.output {
+  font-size: 2.2rem;
+  font-weight: 600;
+  word-break: break-all;
+  margin-top: 6px;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 0.85rem;
+  min-height: 1.4em;
+  margin: 8px 2px;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.key {
+  border: none;
+  border-radius: 12px;
+  padding: 16px 0;
+  font-size: 1.15rem;
+  color: var(--text);
+  background: var(--key);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.05s;
+}
+
+.key:hover { background: var(--key-hover); }
+.key:active { transform: scale(0.96); }
+.key:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.key.operator { background: var(--operator); color: #1c1917; }
+.key.operator:hover { filter: brightness(1.1); }
+.key.operator.active { outline: 2px solid var(--text); }
+.key.function { background: #64748b; }
+.key.equals { background: var(--accent); color: #0c4a6e; }
+.key.zero { grid-column: span 2; }
+
+.key:disabled { opacity: 0.6; cursor: wait; }
+
+.status {
+  margin-top: 16px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+#api-status.ok { color: #4ade80; }
+#api-status.down { color: var(--danger); }
